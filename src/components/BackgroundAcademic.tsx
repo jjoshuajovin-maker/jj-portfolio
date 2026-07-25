@@ -34,7 +34,7 @@ const BackgroundAcademic: React.FC = () => {
             </div>
             
             <h3 className="text-2xl md:text-3xl font-bold font-heading text-text">
-              B.S. in Computer Science
+              B.E. in Computer Science
             </h3>
             
             <p className="text-secondary-text font-sans leading-relaxed">
