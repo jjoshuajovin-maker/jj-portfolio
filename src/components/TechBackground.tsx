@@ -26,6 +26,17 @@ const TechBackground: React.FC = () => {
     // Mouse tracker
     const mouse = { x: width / 2, y: height / 2, active: false, rx: width / 2, ry: height / 2 };
 
+    // Trailing particles
+    interface TrailParticle {
+      x: number;
+      y: number;
+      size: number;
+      alpha: number;
+      vx: number;
+      vy: number;
+    }
+    const trailParticles: TrailParticle[] = [];
+
     // 3D Geometry vertices (Cube)
     const cubeVertices = [
       { x: -1, y: -1, z: -1 }, { x: 1, y: -1, z: -1 },
@@ -129,10 +140,26 @@ const TechBackground: React.FC = () => {
       generateBorderParticles();
     };
 
+    let lastSpawnTime = 0;
     const handleMouseMove = (e: MouseEvent) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
       mouse.active = true;
+
+      // Spawn a trailing particle when mouse moves, throttled
+      const now = Date.now();
+      if (now - lastSpawnTime > 16) {
+        trailParticles.push({
+          x: e.clientX,
+          y: e.clientY,
+          size: 1.5 + Math.random() * 2,
+          alpha: 1.0,
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4
+        });
+        if (trailParticles.length > 50) trailParticles.shift();
+        lastSpawnTime = now;
+      }
     };
 
     const handleMouseLeave = () => {
@@ -175,7 +202,7 @@ const TechBackground: React.FC = () => {
       mouse.rx += (mouse.x - mouse.rx) * 0.1;
       mouse.ry += (mouse.y - mouse.ry) * 0.1;
 
-      // Clear canvas transparently so CSS backgound #121212 shows
+      // Clear canvas transparently
       ctx.clearRect(0, 0, width, height);
 
       // Draw faint grid for blueprint style
@@ -189,7 +216,7 @@ const TechBackground: React.FC = () => {
         ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(width, y); ctx.stroke();
       }
 
-      // Draw HUD graphics in the corners (matches visual style of user image)
+      // Draw HUD graphics in the corners
       ctx.strokeStyle = 'rgba(255, 255, 255, 0.04)';
       ctx.lineWidth = 1;
       
@@ -296,6 +323,24 @@ const TechBackground: React.FC = () => {
           ctx.fill();
         });
       });
+
+      // Draw Trailing Particles (Optional cursor mouse trails)
+      for (let i = trailParticles.length - 1; i >= 0; i--) {
+        const p = trailParticles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.alpha -= 0.018;
+
+        if (p.alpha <= 0) {
+          trailParticles.splice(i, 1);
+          continue;
+        }
+
+        ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha * 0.35})`;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
 
       // Draw Interactive Spotlight Highlight
       if (mouse.active) {

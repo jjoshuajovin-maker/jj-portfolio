@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import Logo from './Logo';
+import Magnetic from './Magnetic';
 
 interface NavbarProps {
   activeSection: string;
@@ -33,28 +34,31 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
       scrolled ? 'glass-nav py-4 shadow-sm' : 'bg-transparent py-6'
     }`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        <a href="#home" className="text-xl font-bold font-heading tracking-tight flex items-center gap-2.5 group">
-          <Logo className="text-accent" size={28} />
-          Jovin<span className="text-accent group-hover:text-primary transition-colors duration-300">Joshua</span>
-        </a>
+        <Magnetic>
+          <a href="#home" className="text-xl font-bold font-heading tracking-tight flex items-center gap-2.5 group">
+            <Logo className="text-accent" size={28} />
+            Jovin<span className="text-accent group-hover:text-primary transition-colors duration-300">Joshua</span>
+          </a>
+        </Magnetic>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-8">
           {navItems.map((item) => {
             const isActive = activeSection === item.href.slice(1);
             return (
-              <a
-                key={item.name}
-                href={item.href}
-                className={`text-sm font-medium transition-colors duration-300 ${
-                  isActive ? 'text-accent' : 'text-secondary-text hover:text-text'
-                } relative py-1`}
-              >
-                {item.name}
-                {isActive && (
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-accent rounded-full" />
-                )}
-              </a>
+              <Magnetic key={item.name} strength={0.25} range={35}>
+                <a
+                  href={item.href}
+                  className={`text-sm font-medium transition-colors duration-300 ${
+                    isActive ? 'text-accent' : 'text-secondary-text hover:text-text'
+                  } relative py-1`}
+                >
+                  {item.name}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-accent rounded-full" />
+                  )}
+                </a>
+              </Magnetic>
             );
           })}
         </div>

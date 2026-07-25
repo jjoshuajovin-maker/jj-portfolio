@@ -10,6 +10,7 @@ import Timeline from './components/Timeline';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import TechBackground from './components/TechBackground';
+import CursorEffect from './components/CursorEffect';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -50,6 +51,9 @@ function App() {
     <div className="text-text min-h-screen relative font-sans overflow-x-hidden">
       {/* Base Background Solid Color */}
       <div className="absolute inset-0 bg-background -z-30 pointer-events-none" />
+
+      {/* Custom Circular Cursor Follower */}
+      <CursorEffect />
 
       {/* Tech Spotlight Background */}
       <TechBackground />

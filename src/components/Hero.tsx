@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion as motionElement } from 'framer-motion';
 import Logo from './Logo';
+import Magnetic from './Magnetic';
 
 const Hero: React.FC = () => {
   return (
@@ -33,22 +34,24 @@ const Hero: React.FC = () => {
 
       {/* Center Image/Illustration: Abstract Metallic Glossy Shape */}
       <div className="flex-1 flex items-center justify-center py-6">
-        <motionElement.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="relative w-64 h-64 md:w-80 md:h-80 rounded-[48px] bg-gradient-to-tr from-[#18181B] to-[#27272A] border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] overflow-hidden flex items-center justify-center group"
-        >
-          {/* Glossy overlay curves */}
-          <div className="absolute inset-0 bg-gradient-to-bl from-white/5 via-transparent to-transparent pointer-events-none" />
-          <div className="absolute -top-12 -left-12 w-64 h-64 rounded-full border border-white/5 bg-white/2 blur-[2px] pointer-events-none transform rotate-45 group-hover:scale-105 transition-transform duration-700" />
-          <div className="absolute -bottom-16 -right-16 w-80 h-80 rounded-[48px] border border-white/5 bg-gradient-to-br from-[#09090B] to-[#18181B] shadow-inner pointer-events-none transform -rotate-12 group-hover:scale-105 transition-transform duration-700" />
-          
-          {/* Logo inside */}
-          <div className="relative text-white/80 transform group-hover:scale-110 transition-transform duration-500">
-            <Logo size={80} />
-          </div>
-        </motionElement.div>
+        <Magnetic range={100} strength={0.4}>
+          <motionElement.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="relative w-64 h-64 md:w-80 md:h-80 rounded-[48px] bg-gradient-to-tr from-[#18181B] to-[#27272A] border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] overflow-hidden flex items-center justify-center group"
+          >
+            {/* Glossy overlay curves */}
+            <div className="absolute inset-0 bg-gradient-to-bl from-white/5 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute -top-12 -left-12 w-64 h-64 rounded-full border border-white/5 bg-white/2 blur-[2px] pointer-events-none transform rotate-45 group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute -bottom-16 -right-16 w-80 h-80 rounded-[48px] border border-white/5 bg-gradient-to-br from-[#09090B] to-[#18181B] shadow-inner pointer-events-none transform -rotate-12 group-hover:scale-105 transition-transform duration-700" />
+            
+            {/* Logo inside */}
+            <div className="relative text-white/80 transform group-hover:scale-110 transition-transform duration-500">
+              <Logo size={80} />
+            </div>
+          </motionElement.div>
+        </Magnetic>
       </div>
 
       {/* Footer-style Bottom Row */}
