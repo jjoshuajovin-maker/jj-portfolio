@@ -68,7 +68,7 @@ const TechBackground: React.FC = () => {
       rotSpeedZ: 0.005 + Math.random() * 0.01,
       speedX: (Math.random() - 0.5) * 0.4,
       speedY: (Math.random() - 0.5) * 0.4,
-      color: Math.random() > 0.5 ? 'rgba(0, 180, 216, 0.25)' : 'rgba(168, 85, 247, 0.25)', // Cyan or Purple
+      color: Math.random() > 0.5 ? 'rgba(37, 99, 235, 0.08)' : 'rgba(2, 132, 199, 0.08)', // Light Blue/Cyan
     }));
 
     // Border Plexus Particles
@@ -89,21 +89,20 @@ const TechBackground: React.FC = () => {
       borderParticles.length = 0;
       const count = 80;
       for (let i = 0; i < count; i++) {
-        // Constrain particles to screen borders (outer 20%)
-        const side = Math.floor(Math.random() * 4); // 0: Top, 1: Right, 2: Bottom, 3: Left
+        const side = Math.floor(Math.random() * 4);
         let x = 0, y = 0;
         const margin = 120;
 
-        if (side === 0) { // Top
+        if (side === 0) {
           x = Math.random() * width;
           y = Math.random() * margin;
-        } else if (side === 1) { // Right
+        } else if (side === 1) {
           x = width - Math.random() * margin;
           y = Math.random() * height;
-        } else if (side === 2) { // Bottom
+        } else if (side === 2) {
           x = Math.random() * width;
           y = height - Math.random() * margin;
-        } else { // Left
+        } else {
           x = Math.random() * margin;
           y = Math.random() * height;
         }
@@ -176,18 +175,11 @@ const TechBackground: React.FC = () => {
       mouse.rx += (mouse.x - mouse.rx) * 0.1;
       mouse.ry += (mouse.y - mouse.ry) * 0.1;
 
-      // 1. Draw Background Gradient matching the user image
-      // Deep purple/indigo center radiating out to dark navy/black
-      const grad = ctx.createRadialGradient(width / 2, height / 2, 0, width / 2, height / 2, Math.max(width, height) * 0.8);
-      grad.addColorStop(0, '#190A38');    // Deep dark purple
-      grad.addColorStop(0.4, '#0D082A');  // Deep indigo
-      grad.addColorStop(0.8, '#060417');  // Dark navy
-      grad.addColorStop(1, '#02020A');    // Pitch black
-      ctx.fillStyle = grad;
-      ctx.fillRect(0, 0, width, height);
+      // Clear transparently so HTML body background color (white) shows through
+      ctx.clearRect(0, 0, width, height);
 
-      // Draw faint blueprint grid
-      ctx.strokeStyle = 'rgba(28, 37, 65, 0.15)';
+      // Draw faint grid for blueprint style
+      ctx.strokeStyle = 'rgba(15, 23, 42, 0.04)';
       ctx.lineWidth = 0.5;
       const spacing = 80;
       for (let x = 0; x < width; x += spacing) {
@@ -197,18 +189,18 @@ const TechBackground: React.FC = () => {
         ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(width, y); ctx.stroke();
       }
 
-      // 2. Draw HUD graphics in the corners (matches visual style of user image)
-      ctx.strokeStyle = 'rgba(0, 180, 216, 0.2)';
+      // Draw HUD graphics in the corners (matches visual style of user image)
+      ctx.strokeStyle = 'rgba(37, 99, 235, 0.12)';
       ctx.lineWidth = 1;
       
       // Top Left Corner HUD
       ctx.save();
       ctx.translate(60, 60);
       ctx.strokeRect(0, 0, 160, 120);
-      ctx.fillStyle = 'rgba(0, 180, 216, 0.1)';
+      ctx.fillStyle = 'rgba(37, 99, 235, 0.03)';
       ctx.fillRect(5, 5, 150, 15);
       // Small decorative terminal code lines
-      ctx.fillStyle = 'rgba(0, 180, 216, 0.3)';
+      ctx.fillStyle = 'rgba(37, 99, 235, 0.12)';
       ctx.fillRect(10, 35, 120, 2);
       ctx.fillRect(10, 45, 140, 2);
       ctx.fillRect(10, 55, 90, 2);
@@ -219,7 +211,7 @@ const TechBackground: React.FC = () => {
       ctx.save();
       ctx.translate(width - 220, height - 180);
       ctx.strokeRect(0, 0, 160, 120);
-      ctx.fillStyle = 'rgba(168, 85, 247, 0.15)';
+      ctx.fillStyle = 'rgba(2, 132, 199, 0.12)';
       ctx.beginPath();
       ctx.moveTo(10, 100);
       ctx.lineTo(40, 60);
@@ -229,14 +221,12 @@ const TechBackground: React.FC = () => {
       ctx.stroke();
       ctx.restore();
 
-      // 3. Draw Border Plexus Waves
+      // Draw Border Plexus Waves
       borderParticles.forEach((p, idx) => {
-        // Organic floating motion around its base coordinate
         p.angle += p.speed;
         p.x = p.baseX + Math.cos(p.angle) * 15;
         p.y = p.baseY + Math.sin(p.angle) * 15;
 
-        // Mouse hover interaction: push away slightly when mouse is near
         const dx = p.x - mouse.rx;
         const dy = p.y - mouse.ry;
         const dist = Math.hypot(dx, dy);
@@ -247,7 +237,7 @@ const TechBackground: React.FC = () => {
         }
 
         // Draw particle dot
-        ctx.fillStyle = 'rgba(0, 180, 216, 0.6)';
+        ctx.fillStyle = 'rgba(37, 99, 235, 0.3)';
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fill();
@@ -257,8 +247,8 @@ const TechBackground: React.FC = () => {
           const p2 = borderParticles[j];
           const distance = Math.hypot(p.x - p2.x, p.y - p2.y);
           if (distance < 90) {
-            const alpha = (90 - distance) / 90 * 0.25;
-            ctx.strokeStyle = `rgba(0, 180, 216, ${alpha})`;
+            const alpha = (90 - distance) / 90 * 0.18;
+            ctx.strokeStyle = `rgba(37, 99, 235, ${alpha})`;
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
@@ -268,29 +258,24 @@ const TechBackground: React.FC = () => {
         }
       });
 
-      // 4. Draw Floating 3D Shapes (wireframe cubes/polygons)
+      // Draw Floating 3D Shapes (wireframe cubes/polygons)
       shapes.forEach((shape) => {
-        // Move shape
         shape.x += shape.speedX;
         shape.y += shape.speedY;
 
-        // Bounce on boundaries
         if (shape.x < -100) shape.x = width + 100;
         if (shape.x > width + 100) shape.x = -100;
         if (shape.y < -100) shape.y = height + 100;
         if (shape.y > height + 100) shape.y = -100;
 
-        // Rotate
         shape.angleX += shape.rotSpeedX;
         shape.angleY += shape.rotSpeedY;
         shape.angleZ += shape.rotSpeedZ;
 
-        // Calculate 2D projections
         const projectedVertices = cubeVertices.map(v => 
           project(v.x, v.y, v.z, shape.angleX, shape.angleY, shape.angleZ, shape.size)
         );
 
-        // Draw edges
         ctx.strokeStyle = shape.color;
         ctx.lineWidth = 0.75;
         cubeEdges.forEach(edge => {
@@ -304,8 +289,7 @@ const TechBackground: React.FC = () => {
           }
         });
 
-        // Draw vertices dot
-        ctx.fillStyle = 'rgba(0, 180, 216, 0.4)';
+        ctx.fillStyle = 'rgba(37, 99, 235, 0.15)';
         projectedVertices.forEach(v => {
           ctx.beginPath();
           ctx.arc(shape.x + v.x, shape.y + v.y, 2, 0, Math.PI * 2);
@@ -313,16 +297,16 @@ const TechBackground: React.FC = () => {
         });
       });
 
-      // 5. Draw Interactive Spotlight Highlight (neon lighting follow cursor)
+      // Draw Interactive Spotlight Highlight
       if (mouse.active) {
         const spotlightRadius = 240;
         const spotlightGradient = ctx.createRadialGradient(
           mouse.rx, mouse.ry, 0,
           mouse.rx, mouse.ry, spotlightRadius
         );
-        spotlightGradient.addColorStop(0, 'rgba(0, 180, 216, 0.12)');
-        spotlightGradient.addColorStop(0.5, 'rgba(168, 85, 247, 0.05)'); // Purple secondary glow
-        spotlightGradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        spotlightGradient.addColorStop(0, 'rgba(37, 99, 235, 0.08)');
+        spotlightGradient.addColorStop(0.5, 'rgba(2, 132, 199, 0.04)');
+        spotlightGradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
 
         ctx.fillStyle = spotlightGradient;
         ctx.beginPath();
@@ -330,7 +314,7 @@ const TechBackground: React.FC = () => {
         ctx.fill();
 
         // Neon target overlay
-        ctx.strokeStyle = 'rgba(0, 180, 216, 0.35)';
+        ctx.strokeStyle = 'rgba(37, 99, 235, 0.2)';
         ctx.lineWidth = 0.5;
         ctx.beginPath();
         ctx.arc(mouse.rx, mouse.ry, 8, 0, Math.PI * 2);

@@ -4,12 +4,12 @@
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-heading: "Space Grotesk", sans-serif;
   
-  --color-background: #0B132B;
-  --color-surface: #1C2541;
-  --color-primary: #3B82F6;
-  --color-accent: #00B4D8;
-  --color-text: #F8FAFC;
-  --color-secondary-text: #94A3B8;
+  --color-background: #FFFFFF;
+  --color-surface: #F8FAFC;
+  --color-primary: #2563EB;
+  --color-accent: #0284C7;
+  --color-text: #0F172A;
+  --color-secondary-text: #475569;
 }
 
 @layer base {
@@ -31,37 +31,39 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0B132B;
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1C2541;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3B82F6;
+  background: #64748B;
 }
 
 /* Custom glowing effects */
 .glow-primary {
-  box-shadow: 0 0 50px -10px rgba(59, 130, 246, 0.25);
+  box-shadow: 0 10px 40px -10px rgba(37, 99, 235, 0.15);
 }
 
 .glow-accent {
-  box-shadow: 0 0 50px -10px rgba(0, 180, 216, 0.25);
+  box-shadow: 0 10px 40px -10px rgba(2, 132, 199, 0.15);
 }
 
 .glass-card {
-  background: rgba(28, 37, 65, 0.45);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
 }
 
 .glass-nav {
-  background: rgba(11, 19, 43, 0.85);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 20px -10px rgba(15, 23, 42, 0.05);
 }
 
 /* Timeline & Custom Grid Animations */

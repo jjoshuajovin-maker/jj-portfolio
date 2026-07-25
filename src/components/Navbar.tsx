@@ -30,12 +30,12 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? 'glass-nav py-4 shadow-lg shadow-black/20' : 'bg-transparent py-6'
+      scrolled ? 'glass-nav py-4 shadow-sm' : 'bg-transparent py-6'
     }`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         <a href="#home" className="text-xl font-bold font-heading tracking-tight flex items-center gap-2.5 group">
-          <Logo className="text-[#00B4D8]" size={28} />
-          Jovin<span className="text-[#00B4D8] group-hover:text-white transition-colors duration-300">Joshua</span>
+          <Logo className="text-accent" size={28} />
+          Jovin<span className="text-accent group-hover:text-primary transition-colors duration-300">Joshua</span>
         </a>
 
         {/* Desktop Menu */}
@@ -47,12 +47,12 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                 key={item.name}
                 href={item.href}
                 className={`text-sm font-medium transition-colors duration-300 ${
-                  isActive ? 'text-[#00B4D8]' : 'text-secondary-text hover:text-text'
+                  isActive ? 'text-accent' : 'text-secondary-text hover:text-text'
                 } relative py-1`}
               >
                 {item.name}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#00B4D8] rounded-full" />
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-accent rounded-full" />
                 )}
               </a>
             );
@@ -70,7 +70,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
 
       {/* Mobile Drawer */}
       {isOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full glass-card py-6 px-8 flex flex-col gap-4 border-b border-white/5 animate-fade-in">
+        <div className="lg:hidden absolute top-full left-0 w-full glass-card py-6 px-8 flex flex-col gap-4 border-b border-slate-100 animate-fade-in">
           {navItems.map((item) => {
             const isActive = activeSection === item.href.slice(1);
             return (
@@ -78,8 +78,8 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                 key={item.name}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className={`text-base font-medium py-2 border-b border-white/5 transition-colors duration-300 ${
-                  isActive ? 'text-[#00B4D8]' : 'text-secondary-text hover:text-text'
+                className={`text-base font-medium py-2 border-b border-slate-100 transition-colors duration-300 ${
+                  isActive ? 'text-accent' : 'text-secondary-text hover:text-text'
                 }`}
               >
                 {item.name}

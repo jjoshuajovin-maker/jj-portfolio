@@ -48,10 +48,10 @@ const ProjectsTable: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-100px' }}
         transition={{ duration: 0.6 }}
-        className="overflow-x-auto rounded-2xl glass-card border border-white/5 shadow-2xl"
+        className="overflow-x-auto rounded-2xl glass-card border border-slate-100 shadow-2xl"
       >
-        <table className="min-w-full divide-y divide-white/5 font-sans">
-          <thead className="bg-[#1C2541]/40">
+        <table className="min-w-full divide-y divide-slate-100 font-sans">
+          <thead className="bg-slate-50">
             <tr>
               <th scope="col" className="px-6 py-4 text-left text-xs md:text-sm font-bold text-text uppercase tracking-wider font-heading">
                 Project Name
@@ -67,16 +67,16 @@ const ProjectsTable: React.FC = () => {
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-white/5 bg-[#0F172A]/10">
+          <tbody className="divide-y divide-slate-100 bg-white/50">
             {rows.map((row) => (
-              <tr key={row.name} className="hover:bg-white/5 transition-colors duration-200">
+              <tr key={row.name} className="hover:bg-slate-50 transition-colors duration-200">
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-text">
                   {row.name}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-secondary-text">
                   {row.focus}
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-[#00B4D8] font-medium">
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-accent font-medium">
                   {row.stack}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-secondary-text">

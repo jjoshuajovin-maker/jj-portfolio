@@ -25,11 +25,11 @@ const BackgroundAcademic: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6 }}
-            className="p-8 md:p-10 rounded-3xl glass-card flex flex-col gap-6 hover:border-white/10 transition-all duration-300 relative group overflow-hidden"
+            className="p-8 md:p-10 rounded-3xl glass-card flex flex-col gap-6 hover:border-slate-200 transition-all duration-300 relative group overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-[#00B4D8]/5 rounded-full blur-[60px] pointer-events-none group-hover:bg-[#00B4D8]/10 transition-all duration-500" />
+            <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-accent/5 rounded-full blur-[60px] pointer-events-none group-hover:bg-accent/10 transition-all duration-500" />
             
-            <div className="inline-flex items-center w-fit px-3.5 py-1 rounded-full bg-[#00B4D8]/10 border border-[#00B4D8]/20 text-[#00B4D8] text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center w-fit px-3.5 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-bold uppercase tracking-wider">
               Education
             </div>
             
@@ -51,11 +51,11 @@ const BackgroundAcademic: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6 }}
-            className="p-8 md:p-10 rounded-3xl glass-card flex flex-col gap-6 hover:border-white/10 transition-all duration-300 relative group overflow-hidden"
+            className="p-8 md:p-10 rounded-3xl glass-card flex flex-col gap-6 hover:border-slate-200 transition-all duration-300 relative group overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-blue-500/5 rounded-full blur-[60px] pointer-events-none group-hover:bg-blue-500/10 transition-all duration-500" />
+            <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-primary/5 rounded-full blur-[60px] pointer-events-none group-hover:bg-primary/10 transition-all duration-500" />
             
-            <div className="inline-flex items-center w-fit px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center w-fit px-3.5 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider">
               Experience
             </div>
             
@@ -94,10 +94,10 @@ const BackgroundAcademic: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-4 p-8 rounded-3xl glass-card flex flex-col items-center justify-center text-center border border-white/5 relative overflow-hidden group hover:border-[#00B4D8]/20 transition-all duration-300"
+            className="lg:col-span-4 p-8 rounded-3xl glass-card flex flex-col items-center justify-center text-center border border-slate-100 hover:border-accent/30 transition-all duration-300 relative overflow-hidden group"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#00B4D8]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <span className="text-7xl md:text-8xl font-bold font-heading text-[#00B4D8] mb-4 drop-shadow-[0_0_15px_rgba(0,180,216,0.3)]">
+            <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <span className="text-7xl md:text-8xl font-bold font-heading text-accent mb-4 drop-shadow-[0_0_15px_rgba(2,132,199,0.15)]">
               35%
             </span>
             <span className="text-sm font-semibold text-secondary-text tracking-wide uppercase">
@@ -119,13 +119,13 @@ const BackgroundAcademic: React.FC = () => {
             
             <ul className="space-y-4 font-sans text-secondary-text text-base md:text-lg leading-relaxed">
               <li className="flex gap-3">
-                <span className="text-[#00B4D8] text-xl font-bold mt-0.5">•</span>
+                <span className="text-accent text-xl font-bold mt-0.5">•</span>
                 <span>
                   Refactored legacy SQL queries and indexed database endpoints during internship, significantly optimizing query execution speed.
                 </span>
               </li>
               <li className="flex gap-3">
-                <span className="text-[#00B4D8] text-xl font-bold mt-0.5">•</span>
+                <span className="text-accent text-xl font-bold mt-0.5">•</span>
                 <span>
                   Delivered 12+ verified feature tickets, authored technical documentation, and maintained 90%+ unit test coverage across assigned microservices.
                 </span>

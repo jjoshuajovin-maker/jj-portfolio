@@ -49,13 +49,13 @@ function App() {
   return (
     <div className="text-text min-h-screen relative font-sans overflow-x-hidden">
       {/* Base Background Solid Color */}
-      <div className="absolute inset-0 bg-[#0B132B] -z-30 pointer-events-none" />
+      <div className="absolute inset-0 bg-background -z-30 pointer-events-none" />
 
       {/* Tech Spotlight Background */}
       <TechBackground />
 
       {/* Glow decorations */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120px,rgba(28,37,65,0.6)_0%,transparent_60%)] pointer-events-none -z-10" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120px,rgba(37,99,235,0.06)_0%,transparent_60%)] pointer-events-none -z-10" />
 
       {/* Navigation */}
       <Navbar activeSection={activeSection} />
@@ -64,25 +64,25 @@ function App() {
       <main className="relative z-10">
         <Hero />
         
-        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
         <BackgroundAcademic />
         
-        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
         <Skills />
         
-        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
         <FeaturedProjects />
         
-        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
         <EngineeringPractices />
         
-        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
         <ProjectsTable />
         
-        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
         <Timeline />
         
-        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
         <Contact />
       </main>
 
