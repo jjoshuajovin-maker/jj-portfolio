@@ -68,7 +68,7 @@ const TechBackground: React.FC = () => {
       rotSpeedZ: 0.005 + Math.random() * 0.01,
       speedX: (Math.random() - 0.5) * 0.4,
       speedY: (Math.random() - 0.5) * 0.4,
-      color: Math.random() > 0.5 ? 'rgba(37, 99, 235, 0.08)' : 'rgba(2, 132, 199, 0.08)', // Light Blue/Cyan
+      color: 'rgba(255, 255, 255, 0.04)', // Elegant thin white lines
     }));
 
     // Border Plexus Particles
@@ -116,7 +116,7 @@ const TechBackground: React.FC = () => {
           baseY: y,
           angle: Math.random() * Math.PI * 2,
           speed: 0.02 + Math.random() * 0.03,
-          radius: 1 + Math.random() * 2,
+          radius: 1 + Math.random() * 1.5,
         });
       }
     };
@@ -175,11 +175,11 @@ const TechBackground: React.FC = () => {
       mouse.rx += (mouse.x - mouse.rx) * 0.1;
       mouse.ry += (mouse.y - mouse.ry) * 0.1;
 
-      // Clear transparently so HTML body background color (white) shows through
+      // Clear canvas transparently so CSS backgound #121212 shows
       ctx.clearRect(0, 0, width, height);
 
       // Draw faint grid for blueprint style
-      ctx.strokeStyle = 'rgba(15, 23, 42, 0.04)';
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.015)';
       ctx.lineWidth = 0.5;
       const spacing = 80;
       for (let x = 0; x < width; x += spacing) {
@@ -190,17 +190,17 @@ const TechBackground: React.FC = () => {
       }
 
       // Draw HUD graphics in the corners (matches visual style of user image)
-      ctx.strokeStyle = 'rgba(37, 99, 235, 0.12)';
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.04)';
       ctx.lineWidth = 1;
       
       // Top Left Corner HUD
       ctx.save();
       ctx.translate(60, 60);
       ctx.strokeRect(0, 0, 160, 120);
-      ctx.fillStyle = 'rgba(37, 99, 235, 0.03)';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.01)';
       ctx.fillRect(5, 5, 150, 15);
       // Small decorative terminal code lines
-      ctx.fillStyle = 'rgba(37, 99, 235, 0.12)';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.04)';
       ctx.fillRect(10, 35, 120, 2);
       ctx.fillRect(10, 45, 140, 2);
       ctx.fillRect(10, 55, 90, 2);
@@ -211,7 +211,7 @@ const TechBackground: React.FC = () => {
       ctx.save();
       ctx.translate(width - 220, height - 180);
       ctx.strokeRect(0, 0, 160, 120);
-      ctx.fillStyle = 'rgba(2, 132, 199, 0.12)';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.03)';
       ctx.beginPath();
       ctx.moveTo(10, 100);
       ctx.lineTo(40, 60);
@@ -237,7 +237,7 @@ const TechBackground: React.FC = () => {
         }
 
         // Draw particle dot
-        ctx.fillStyle = 'rgba(37, 99, 235, 0.3)';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fill();
@@ -247,8 +247,8 @@ const TechBackground: React.FC = () => {
           const p2 = borderParticles[j];
           const distance = Math.hypot(p.x - p2.x, p.y - p2.y);
           if (distance < 90) {
-            const alpha = (90 - distance) / 90 * 0.18;
-            ctx.strokeStyle = `rgba(37, 99, 235, ${alpha})`;
+            const alpha = (90 - distance) / 90 * 0.08;
+            ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
@@ -289,7 +289,7 @@ const TechBackground: React.FC = () => {
           }
         });
 
-        ctx.fillStyle = 'rgba(37, 99, 235, 0.15)';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.06)';
         projectedVertices.forEach(v => {
           ctx.beginPath();
           ctx.arc(shape.x + v.x, shape.y + v.y, 2, 0, Math.PI * 2);
@@ -304,9 +304,9 @@ const TechBackground: React.FC = () => {
           mouse.rx, mouse.ry, 0,
           mouse.rx, mouse.ry, spotlightRadius
         );
-        spotlightGradient.addColorStop(0, 'rgba(37, 99, 235, 0.08)');
-        spotlightGradient.addColorStop(0.5, 'rgba(2, 132, 199, 0.04)');
-        spotlightGradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+        spotlightGradient.addColorStop(0, 'rgba(255, 255, 255, 0.03)');
+        spotlightGradient.addColorStop(0.5, 'rgba(255, 255, 255, 0.01)');
+        spotlightGradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
 
         ctx.fillStyle = spotlightGradient;
         ctx.beginPath();
@@ -314,7 +314,7 @@ const TechBackground: React.FC = () => {
         ctx.fill();
 
         // Neon target overlay
-        ctx.strokeStyle = 'rgba(37, 99, 235, 0.2)';
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
         ctx.lineWidth = 0.5;
         ctx.beginPath();
         ctx.arc(mouse.rx, mouse.ry, 8, 0, Math.PI * 2);

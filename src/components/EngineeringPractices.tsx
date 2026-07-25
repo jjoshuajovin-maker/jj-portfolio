@@ -6,22 +6,22 @@ const EngineeringPractices: React.FC = () => {
   const practices = [
     {
       title: 'Clean & Modular Architecture',
-      icon: <GitBranch className="text-accent" size={24} />,
+      icon: <GitBranch className="text-white/80" size={24} />,
       desc: 'Writing scalable, maintainable code following SOLID principles, component reusability, and separation of concerns.',
     },
     {
       title: 'Automated Testing',
-      icon: <FlaskConical className="text-accent" size={24} />,
+      icon: <FlaskConical className="text-white/80" size={24} />,
       desc: 'Writing unit and integration tests using Jest and React Testing Library to prevent regression and ensure code stability.',
     },
     {
       title: 'Agile & Collaborative Workflow',
-      icon: <Users className="text-accent" size={24} />,
+      icon: <Users className="text-white/80" size={24} />,
       desc: 'Active participant in daily standups, sprint planning, pull request reviews, and Git feature-branch workflows.',
     },
     {
       title: 'Comprehensive Documentation',
-      icon: <FileText className="text-accent" size={24} />,
+      icon: <FileText className="text-white/80" size={24} />,
       desc: 'Authoring clear API documentation via Swagger/Postman and concise README setup guides for ease of onboarding.',
     },
   ];
@@ -48,10 +48,10 @@ const EngineeringPractices: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.5, delay: idx * 0.1 }}
-            className="flex items-start gap-5 p-6 rounded-2xl glass-card border border-slate-100 hover:border-slate-200 transition-all duration-300 group"
+            className="flex items-start gap-5 p-6 rounded-2xl glass-card border border-white/5 hover:border-white/10 transition-all duration-300 group"
           >
             {/* Icon Wrapper */}
-            <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 group-hover:bg-accent/10 group-hover:border-accent/20 transition-all duration-300 flex-shrink-0">
+            <div className="p-3 bg-white/3 rounded-xl border border-white/5 group-hover:bg-white/5 group-hover:border-white/10 transition-all duration-300 flex-shrink-0">
               {practice.icon}
             </div>
 

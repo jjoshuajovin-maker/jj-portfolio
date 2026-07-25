@@ -39,7 +39,7 @@ const Timeline: React.FC = () => {
       <div className="relative flex flex-col md:flex-row items-stretch md:items-start justify-between gap-8 md:gap-4 py-8">
         
         {/* Connection Line */}
-        <div className="absolute top-1/2 left-[15px] md:left-0 md:top-[38px] w-[2px] md:w-full h-full md:h-[2px] bg-gradient-to-b md:bg-gradient-to-r from-primary via-accent to-accent/20 -z-10" />
+        <div className="absolute top-1/2 left-[15px] md:left-0 md:top-[38px] w-[2px] md:w-full h-full md:h-[2px] bg-gradient-to-b md:bg-gradient-to-r from-white/20 via-white/10 to-transparent -z-10" />
 
         {steps.map((step, idx) => (
           <motion.div
@@ -51,12 +51,12 @@ const Timeline: React.FC = () => {
             className="flex flex-row md:flex-col items-start md:items-center text-left md:text-center gap-6 md:gap-8 flex-1 relative"
           >
             {/* Timeline Node Dot */}
-            <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-background border-4 border-accent shadow-[0_0_15px_rgba(2,132,199,0.2)] z-10 flex-shrink-0">
-              <div className="w-2.5 h-2.5 rounded-full bg-accent" />
+            <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-[#121212] border-4 border-white/20 shadow-md z-10 flex-shrink-0">
+              <div className="w-2.5 h-2.5 rounded-full bg-white/60" />
             </div>
 
             {/* Card Content */}
-            <div className="p-5 md:p-6 rounded-2xl glass-card border border-slate-100 flex flex-col gap-2 flex-1 md:w-full mt-[-8px] md:mt-0">
+            <div className="p-5 md:p-6 rounded-2xl glass-card border border-white/5 flex flex-col gap-2 flex-1 md:w-full mt-[-8px] md:mt-0">
               <h3 className="text-lg md:text-xl font-bold font-heading text-text">
                 {step.title}
               </h3>

@@ -28,7 +28,7 @@ const FeaturedProjects: React.FC = () => {
             className="flex flex-col gap-6"
           >
             <div>
-              <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 border border-accent/20 rounded-full mb-4">
+              <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider text-secondary-text bg-white/5 border border-white/10 rounded-full mb-4">
                 Featured Project
               </span>
               <h3 className="text-2xl md:text-4xl font-bold font-heading text-text mb-4">
@@ -41,7 +41,7 @@ const FeaturedProjects: React.FC = () => {
 
             <ul className="space-y-4">
               <li className="flex items-center gap-3">
-                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-accent/10 text-accent">
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white/5 text-white/80">
                   ✓
                 </span>
                 <span className="text-secondary-text font-sans text-sm md:text-base font-medium">
@@ -49,7 +49,7 @@ const FeaturedProjects: React.FC = () => {
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-accent/10 text-accent">
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white/5 text-white/80">
                   ✓
                 </span>
                 <span className="text-secondary-text font-sans text-sm md:text-base font-medium">
@@ -57,7 +57,7 @@ const FeaturedProjects: React.FC = () => {
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-accent/10 text-accent">
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white/5 text-white/80">
                   ✓
                 </span>
                 <span className="text-secondary-text font-sans text-sm md:text-base font-medium">
@@ -73,10 +73,10 @@ const FeaturedProjects: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6 }}
-            className="rounded-2xl bg-[#0F172A] border border-slate-800 shadow-2xl overflow-hidden font-mono text-xs md:text-sm"
+            className="rounded-2xl bg-[#09090B] border border-white/5 shadow-2xl overflow-hidden font-mono text-xs md:text-sm"
           >
             {/* Window header */}
-            <div className="bg-[#1C2541]/40 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+            <div className="bg-[#18181B]/40 px-4 py-3 border-b border-white/5 flex items-center justify-between">
               <div className="flex gap-1.5">
                 <span className="w-3 w-3 h-3 rounded-full bg-red-500/80"></span>
                 <span className="w-3 w-3 h-3 rounded-full bg-yellow-500/80"></span>
@@ -133,10 +133,10 @@ const FeaturedProjects: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
-          className="p-8 md:p-12 rounded-3xl glass-card border border-slate-100 flex flex-col gap-8 relative overflow-hidden"
+          className="p-8 md:p-12 rounded-3xl glass-card border border-white/5 flex flex-col gap-8 relative overflow-hidden"
         >
           {/* Background decoration */}
-          <div className="absolute -bottom-20 -right-20 w-[300px] h-[300px] bg-accent/5 rounded-full blur-[80px] pointer-events-none" />
+          <div className="absolute -bottom-20 -right-20 w-[300px] h-[300px] bg-white/3 rounded-full blur-[80px] pointer-events-none" />
 
           {/* Bar Chart */}
           <div className="flex flex-col gap-6 w-full">
@@ -145,13 +145,13 @@ const FeaturedProjects: React.FC = () => {
               <span className="w-48 text-sm md:text-base font-semibold text-secondary-text">
                 Original REST Endpoint
               </span>
-              <div className="flex-1 bg-slate-100 rounded-full overflow-hidden h-9 border border-slate-200/50 relative flex items-center">
+              <div className="flex-1 bg-white/5 rounded-full overflow-hidden h-9 border border-white/5 relative flex items-center">
                 <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: '100%' }}
                   viewport={{ once: true }}
                   transition={{ duration: 1, ease: 'easeOut' }}
-                  className="bg-gradient-to-r from-blue-700 via-blue-500 to-accent h-full flex items-center justify-end pr-4"
+                  className="bg-gradient-to-r from-zinc-700 via-zinc-500 to-zinc-300 h-full flex items-center justify-end pr-4"
                 >
                   <span className="text-xs md:text-sm font-bold text-white drop-shadow-md">
                     420 ms
@@ -165,13 +165,13 @@ const FeaturedProjects: React.FC = () => {
               <span className="w-48 text-sm md:text-base font-semibold text-secondary-text">
                 With Redis Caching
               </span>
-              <div className="flex-1 bg-slate-100 rounded-full overflow-hidden h-9 border border-slate-200/50 relative flex items-center">
+              <div className="flex-1 bg-white/5 rounded-full overflow-hidden h-9 border border-white/5 relative flex items-center">
                 <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: '28.5%' }} // 120 / 420 = ~28.5%
                   viewport={{ once: true }}
                   transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
-                  className="bg-gradient-to-r from-blue-600 to-accent h-full flex items-center justify-end pr-4"
+                  className="bg-gradient-to-r from-zinc-600 to-zinc-400 h-full flex items-center justify-end pr-4"
                 >
                   <span className="text-xs md:text-sm font-bold text-white drop-shadow-md">
                     120 ms
@@ -185,15 +185,15 @@ const FeaturedProjects: React.FC = () => {
               <span className="w-48 text-sm md:text-base font-semibold text-secondary-text">
                 Optimized SQL Indexes
               </span>
-              <div className="flex-1 bg-slate-100 rounded-full overflow-hidden h-9 border border-slate-200/50 relative flex items-center">
+              <div className="flex-1 bg-white/5 rounded-full overflow-hidden h-9 border border-white/5 relative flex items-center">
                 <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: '15.4%' }} // 65 / 420 = ~15.4%
                   viewport={{ once: true }}
                   transition={{ duration: 1, delay: 0.4, ease: 'easeOut' }}
-                  className="bg-gradient-to-r from-blue-600 to-emerald-500 h-full flex items-center justify-end pr-4"
+                  className="bg-gradient-to-r from-zinc-600 to-white h-full flex items-center justify-end pr-4"
                 >
-                  <span className="text-xs md:text-sm font-bold text-white drop-shadow-md">
+                  <span className="text-xs md:text-sm font-bold text-black drop-shadow-md">
                     65 ms
                   </span>
                 </motion.div>

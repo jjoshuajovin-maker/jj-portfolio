@@ -2,14 +2,14 @@
 
 @theme {
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-  --font-heading: "Space Grotesk", sans-serif;
+  --font-heading: "Playfair Display", Georgia, serif;
   
-  --color-background: #FFFFFF;
-  --color-surface: #F8FAFC;
-  --color-primary: #2563EB;
-  --color-accent: #0284C7;
-  --color-text: #0F172A;
-  --color-secondary-text: #475569;
+  --color-background: #121212;
+  --color-surface: #1E1E1E;
+  --color-primary: #FFFFFF;
+  --color-accent: #A1A1AA;
+  --color-text: #F8FAFC;
+  --color-secondary-text: #A1A1AA;
 }
 
 @layer base {
@@ -20,7 +20,7 @@
     color: var(--color-text);
   }
   
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, y5, h6 {
     font-family: var(--font-heading);
   }
 }
@@ -31,39 +31,38 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #F1F5F9;
+  background: #121212;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #27272A;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748B;
+  background: #3F3F46;
 }
 
 /* Custom glowing effects */
 .glow-primary {
-  box-shadow: 0 10px 40px -10px rgba(37, 99, 235, 0.15);
+  box-shadow: 0 10px 40px -10px rgba(255, 255, 255, 0.03);
 }
 
 .glow-accent {
-  box-shadow: 0 10px 40px -10px rgba(2, 132, 199, 0.15);
+  box-shadow: 0 10px 40px -10px rgba(161, 161, 170, 0.03);
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
+  background: rgba(30, 30, 30, 0.35);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
 }
 
 .glass-nav {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(18, 18, 18, 0.85);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 4px 20px -10px rgba(15, 23, 42, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 /* Timeline & Custom Grid Animations */

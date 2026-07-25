@@ -55,7 +55,7 @@ function App() {
       <TechBackground />
 
       {/* Glow decorations */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120px,rgba(37,99,235,0.06)_0%,transparent_60%)] pointer-events-none -z-10" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120px,rgba(255,255,255,0.02)_0%,transparent_60%)] pointer-events-none -z-10" />
 
       {/* Navigation */}
       <Navbar activeSection={activeSection} />
@@ -64,25 +64,25 @@ function App() {
       <main className="relative z-10">
         <Hero />
         
-        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         <BackgroundAcademic />
         
-        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         <Skills />
         
-        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         <FeaturedProjects />
         
-        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         <EngineeringPractices />
         
-        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         <ProjectsTable />
         
-        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         <Timeline />
         
-        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+        <div className="w-full max-w-7xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         <Contact />
       </main>
 
