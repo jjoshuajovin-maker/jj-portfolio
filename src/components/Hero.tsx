@@ -13,14 +13,13 @@ const Hero: React.FC = () => {
 
       {/* Header Container */}
       <div className="w-full flex flex-col items-center text-center mt-6">
-        {/* Title: "Creative Portfolio" */}
         <motionElement.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-5xl md:text-8xl font-bold font-heading text-text tracking-normal mb-6"
         >
-          Creative Portfolio
+          Engineering Digital Systems
         </motionElement.h1>
 
         {/* Thin elegant horizontal line */}
